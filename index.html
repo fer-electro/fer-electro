@@ -6,7 +6,8 @@
 
 <title>FER⚡ELECTRO | Tecnología Premium</title>
 
-<meta name="description" content="Auriculares, parlantes, cables, cargadores y accesorios tecnológicos. Consultá por WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
@@ -17,102 +18,112 @@ margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:'Poppins',sans-serif;
+}
+
+html{
 scroll-behavior:smooth;
 }
 
 body{
-background:#ffffff;
-color:#111;
+background:#050505;
+color:white;
 overflow-x:hidden;
 }
 
-:root{
---gold:#D4AF37;
---dark:#111111;
---light:#ffffff;
+body::before{
+content:"";
+position:fixed;
+width:800px;
+height:800px;
+background:radial-gradient(circle,#ffd70033,transparent 70%);
+top:-300px;
+right:-200px;
+pointer-events:none;
+z-index:-1;
 }
 
-/* NAVBAR */
+body::after{
+content:"";
+position:fixed;
+width:700px;
+height:700px;
+background:radial-gradient(circle,#ff990022,transparent 70%);
+bottom:-300px;
+left:-250px;
+pointer-events:none;
+z-index:-1;
+}
 
-header{
+nav{
 position:fixed;
 top:0;
-left:0;
 width:100%;
-background:rgba(255,255,255,.95);
-backdrop-filter:blur(15px);
+height:80px;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px 8%;
+padding:0 8%;
+backdrop-filter:blur(20px);
+background:rgba(0,0,0,.4);
+border-bottom:1px solid rgba(255,215,0,.15);
 z-index:999;
-box-shadow:0 5px 20px rgba(0,0,0,.08);
 }
 
 .logo{
 font-size:2rem;
 font-weight:800;
-color:var(--gold);
+background:linear-gradient(45deg,#fff,#ffd700,#ff9d00);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 }
 
-nav{
+.menu{
 display:flex;
 gap:30px;
 }
 
-nav a{
+.menu a{
+color:white;
 text-decoration:none;
-color:#111;
 font-weight:500;
 transition:.3s;
 }
 
-nav a:hover{
-color:var(--gold);
+.menu a:hover{
+color:#ffd700;
 }
-
-.whatsapp-btn{
-background:var(--gold);
-padding:12px 20px;
-border-radius:50px;
-color:#111;
-text-decoration:none;
-font-weight:700;
-}
-
-/* HERO */
 
 .hero{
 min-height:100vh;
 display:flex;
-align-items:center;
 justify-content:center;
+align-items:center;
 text-align:center;
-padding:120px 20px;
-background:
-linear-gradient(135deg,#ffffff,#f5f5f5);
+padding:120px 20px 60px;
 }
 
 .hero-content{
-max-width:900px;
+max-width:1100px;
 }
 
 .hero h1{
-font-size:clamp(3rem,8vw,6rem);
-font-weight:800;
-color:var(--gold);
+font-size:5rem;
+line-height:1;
 margin-bottom:20px;
+background:linear-gradient(45deg,#fff,#ffd700,#ff9d00);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 }
 
 .hero p{
-font-size:1.2rem;
-line-height:1.8;
-max-width:700px;
+font-size:1.3rem;
+color:#cccccc;
+max-width:800px;
 margin:auto;
-margin-bottom:40px;
 }
 
-.hero-buttons{
+.buttons{
+margin-top:40px;
 display:flex;
 justify-content:center;
 gap:20px;
@@ -120,113 +131,70 @@ flex-wrap:wrap;
 }
 
 .btn{
-padding:16px 30px;
-border-radius:50px;
-font-weight:700;
+padding:18px 35px;
+border-radius:60px;
 text-decoration:none;
-transition:.3s;
+font-weight:700;
+transition:.4s;
 }
 
-.btn-gold{
-background:var(--gold);
-color:#111;
+.btn-primary{
+background:linear-gradient(45deg,#ffd700,#ff9d00);
+color:black;
 }
 
-.btn-dark{
-background:#111;
-color:#fff;
-}
-
-.btn:hover{
+.btn-primary:hover{
 transform:translateY(-5px);
+box-shadow:0 20px 50px rgba(255,215,0,.4);
 }
 
-/* BENEFICIOS */
+.btn-secondary{
+border:1px solid #ffd700;
+color:#ffd700;
+}
+
+.btn-secondary:hover{
+background:#ffd700;
+color:black;
+}
+
+.section{
+padding:120px 8%;
+}
 
 .section-title{
-text-align:center;
 font-size:3rem;
-margin-bottom:60px;
-}
-
-.benefits{
-padding:100px 8%;
-}
-
-.benefit-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-}
-
-.benefit{
-padding:40px;
-border-radius:25px;
-background:white;
-box-shadow:0 10px 30px rgba(0,0,0,.08);
+margin-bottom:50px;
 text-align:center;
-transition:.3s;
+background:linear-gradient(45deg,#fff,#ffd700);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 }
-
-.benefit:hover{
-transform:translateY(-10px);
-}
-
-.benefit span{
-font-size:3rem;
-display:block;
-margin-bottom:15px;
-}
-
-/* PRODUCTOS */
 
 .products{
-padding:100px 8%;
-background:#fafafa;
-}
-
-.filters{
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-gap:15px;
-margin-bottom:50px;
-}
-
-.filter-btn{
-border:none;
-padding:12px 20px;
-border-radius:50px;
-cursor:pointer;
-background:white;
-box-shadow:0 5px 15px rgba(0,0,0,.1);
-}
-
-.filter-btn.active{
-background:var(--gold);
-}
-
-.product-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:30px;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:35px;
 }
 
 .card{
-background:white;
-border-radius:25px;
+background:rgba(255,255,255,.03);
+border:1px solid rgba(255,215,0,.1);
+border-radius:30px;
 overflow:hidden;
-box-shadow:0 10px 30px rgba(0,0,0,.08);
-transition:.3s;
+transition:.4s;
+backdrop-filter:blur(15px);
 }
 
 .card:hover{
 transform:translateY(-10px);
+border-color:#ffd700;
+box-shadow:0 30px 80px rgba(255,215,0,.15);
 }
 
 .card img{
 width:100%;
-height:260px;
+height:350px;
 object-fit:cover;
 }
 
@@ -235,64 +203,57 @@ padding:25px;
 }
 
 .card h3{
+font-size:1.6rem;
 margin-bottom:10px;
 }
 
 .card p{
-margin-bottom:20px;
-color:#555;
+color:#bbb;
+line-height:1.7;
 }
 
-.card a{
+.whatsapp{
 display:inline-block;
-background:var(--gold);
-padding:12px 20px;
-border-radius:50px;
-color:#111;
-font-weight:700;
-text-decoration:none;
-}
-
-/* UBICACION */
-
-.location{
-padding:100px 8%;
-}
-
-.location-box{
-max-width:1000px;
-margin:auto;
-background:white;
-padding:50px;
-border-radius:25px;
-box-shadow:0 10px 30px rgba(0,0,0,.08);
-text-align:center;
-}
-
-/* FOOTER */
-
-footer{
-background:#111;
+margin-top:20px;
+padding:12px 25px;
+background:#25D366;
 color:white;
-padding:70px 8%;
+text-decoration:none;
+border-radius:50px;
+font-weight:700;
+}
+
+.contact{
 text-align:center;
 }
 
-footer h2{
-color:var(--gold);
-margin-bottom:15px;
+.contact-box{
+max-width:800px;
+margin:auto;
+padding:50px;
+border-radius:30px;
+background:rgba(255,255,255,.03);
+border:1px solid rgba(255,215,0,.1);
 }
 
-footer p{
-opacity:.8;
+.phone{
+font-size:2rem;
+font-weight:700;
+color:#ffd700;
+margin:20px 0;
 }
 
-/* WHATSAPP */
+.footer{
+padding:50px;
+text-align:center;
+border-top:1px solid rgba(255,255,255,.1);
+color:#999;
+}
 
-.float-wa{
+.floating{
 position:fixed;
-bottom:25px;
 right:25px;
+bottom:25px;
 width:70px;
 height:70px;
 border-radius:50%;
@@ -300,20 +261,21 @@ background:#25D366;
 display:flex;
 justify-content:center;
 align-items:center;
-text-decoration:none;
 font-size:30px;
-z-index:999;
-box-shadow:0 10px 25px rgba(0,0,0,.2);
+text-decoration:none;
+color:white;
+z-index:9999;
+box-shadow:0 15px 40px rgba(0,0,0,.4);
 }
 
 @media(max-width:768px){
 
-nav{
-display:none;
-}
-
 .hero h1{
 font-size:3rem;
+}
+
+.menu{
+display:none;
 }
 
 .section-title{
@@ -324,164 +286,274 @@ font-size:2rem;
 
 </style>
 </head>
+
 <body>
 
-<header>
-
+<nav>
 <div class="logo">FER⚡ELECTRO</div>
 
-<nav>
+<div class="menu">
 <a href="#inicio">Inicio</a>
 <a href="#productos">Productos</a>
-<a href="#ubicacion">Ubicación</a>
+<a href="#contacto">Contacto</a>
+</div>
 </nav>
-
-<a class="whatsapp-btn"
-href="https://wa.me/5493764863227?text=Hola%20quiero%20consultar%20por%20sus%20productos"
-target="_blank">
-WhatsApp
-</a>
-
-</header>
 
 <section class="hero" id="inicio">
 
 <div class="hero-content">
 
-<h1>FER⚡ELECTRO</h1>
+<h1>TECNOLOGÍA PREMIUM</h1>
 
 <p>
-Tecnología premium en Itaembé Guazú.
-Auriculares, parlantes, cables, cargadores y mucho más.
+Audio, accesorios, gadgets y productos innovadores.
+La mejor experiencia tecnológica de Itaembé Guazú.
 </p>
 
-<div class="hero-buttons">
+<div class="buttons">
 
-<a class="btn btn-gold"
-href="https://wa.me/5493764863227"
+<a href="https://wa.me/543764863227" class="btn btn-primary">
+Consultar por WhatsApp
+</a>
+
+<a href="#productos" class="btn btn-secondary">
+Ver Productos
+</a>
+
+</div>
+
+</div>
+
+</section>
+<section class="section" id="productos">
+
+<h2 class="section-title">
+Productos Destacados
+</h2>
+
+<div class="products">
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=1200" alt="Auriculares">
+
+<div class="card-content">
+
+<h3>Auriculares Stereo Music</h3>
+
+<p>
+Auriculares inalámbricos de alta calidad.
+Sonido potente, diseño moderno y gran autonomía para disfrutar música durante horas.
+</p>
+
+<a
+class="whatsapp"
+href="https://wa.me/543764863227?text=Hola%20quiero%20consultar%20por%20los%20auriculares"
 target="_blank">
 Consultar por WhatsApp
 </a>
 
-<a class="btn btn-dark"
-href="#productos">
-Ver productos
-</a>
-
 </div>
 
-</div>
-
-</section>
-
-<section class="benefits">
-
-<h2 class="section-title">¿Por qué elegirnos?</h2>
-
-<div class="benefit-grid">
-
-<div class="benefit">
-<span>⚡</span>
-<h3>Calidad Premium</h3>
-</div>
-
-<div class="benefit">
-<span>🚚</span>
-<h3>Entrega Rápida</h3>
-</div>
-
-<div class="benefit">
-<span>💬</span>
-<h3>Atención Personalizada</h3>
-</div>
-
-<div class="benefit">
-<span>🔒</span>
-<h3>Compra Segura</h3>
-</div>
-
-</div>
-
-</section>
-
-<section class="products" id="productos">
-
-<h2 class="section-title">Productos Destacados</h2>
-
-<div class="product-grid">
-
-<div class="card">
-<img src="img/auricular.jpg" alt="">
-<div class="card-content">
-<h3>Auriculares Bluetooth</h3>
-<p>Sonido potente y diseño moderno.</p>
-<a href="https://wa.me/5493764863227?text=Hola%20quiero%20consultar%20por%20los%20auriculares">
-Consultar por WhatsApp
-</a>
-</div>
 </div>
 
 <div class="card">
-<img src="img/humidificador.jpg" alt="">
+
+<img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=1200" alt="Humidificador">
+
 <div class="card-content">
-<h3>Humidificador LED</h3>
-<p>Ideal para ambientar cualquier espacio.</p>
-<a href="https://wa.me/5493764863227?text=Hola%20quiero%20consultar%20por%20el%20humidificador">
-Consultar por WhatsApp
-</a>
-</div>
-</div>
 
-</div>
-
-</section>
-
-<section class="location" id="ubicacion">
-
-<div class="location-box">
-
-<h2>FER⚡ELECTRO</h2>
-
-<p>Itaembé Guazú, Posadas, Misiones</p>
-
-<br>
-
-<p>📱 +54 9 3764 86-3227</p>
-
-<br>
-
-<a class="btn btn-gold"
-href="https://wa.me/5493764863227"
-target="_blank">
-Consultar ahora
-</a>
-
-</div>
-
-</section>
-
-<footer>
-
-<h2>FER⚡ELECTRO</h2>
+<h3>Aromatizador RGB</h3>
 
 <p>
-Tecnología • Audio • Accesorios Premium
+Humidificador y aromatizador con iluminación RGB.
+Ideal para habitaciones, oficinas y espacios de descanso.
+</p>
+
+<a
+class="whatsapp"
+href="https://wa.me/543764863227?text=Hola%20quiero%20consultar%20por%20el%20aromatizador%20RGB"
+target="_blank">
+Consultar por WhatsApp
+</a>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=1200" alt="Gadget">
+
+<div class="card-content">
+
+<h3>Accesorios Tecnológicos</h3>
+
+<p>
+Productos innovadores para complementar tu experiencia tecnológica.
+Consultanos por disponibilidad y modelos.
+</p>
+
+<a
+class="whatsapp"
+href="https://wa.me/543764863227?text=Hola%20quiero%20consultar%20por%20los%20accesorios"
+target="_blank">
+Consultar por WhatsApp
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+¿Por qué elegir FER⚡ELECTRO?
+</h2>
+
+<div class="contact-box">
+
+<h3 style="font-size:2rem;margin-bottom:20px;color:#ffd700;">
+Tecnología • Calidad • Atención Personalizada
+</h3>
+
+<p style="font-size:1.1rem;line-height:2;color:#ccc;">
+Ofrecemos productos tecnológicos seleccionados cuidadosamente.
+Cada artículo es revisado para brindar una excelente experiencia a nuestros clientes.
+</p>
+
+</div>
+
+</section>
+
+<section class="section contact" id="contacto">
+
+<h2 class="section-title">
+Contacto
+</h2>
+
+<div class="contact-box">
+
+<h3>Itaembé Guazú</h3>
+
+<p class="phone">
+3764-863227
+</p>
+
+<p style="color:#ccc;margin-bottom:30px;">
+Consultanos por disponibilidad, precios y envíos.
+</p>
+
+<a
+class="btn btn-primary"
+href="https://wa.me/543764863227"
+target="_blank">
+Hablar por WhatsApp
+</a>
+
+</div>
+
+</section>
+<section class="section">
+
+<h2 class="section-title">
+Experiencia Premium
+</h2>
+
+<div class="contact-box">
+
+<h3 style="
+font-size:2.2rem;
+margin-bottom:20px;
+background:linear-gradient(45deg,#fff,#ffd700,#ff9d00);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+">
+FER⚡ELECTRO
+</h3>
+
+<p style="
+line-height:2;
+color:#ccc;
+font-size:1.1rem;
+">
+Más que una tienda, buscamos ofrecer una experiencia.
+Tecnología moderna, atención personalizada y productos seleccionados para nuestros clientes.
+</p>
+
+</div>
+
+</section>
+
+<footer class="footer">
+
+<h2 style="
+font-size:2rem;
+margin-bottom:15px;
+background:linear-gradient(45deg,#fff,#ffd700);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+">
+FER⚡ELECTRO
+</h2>
+
+<p>
+Tecnología Premium • Audio • Gadgets • Accesorios
 </p>
 
 <br>
 
 <p>
-Itaembé Guazú - Posadas - Misiones
+Itaembé Guazú • Posadas • Misiones
+</p>
+
+<br>
+
+<p>
+WhatsApp: +54 9 3764 863227
 </p>
 
 </footer>
 
 <a
-class="float-wa"
-href="https://wa.me/5493764863227"
+class="floating"
+href="https://wa.me/543764863227"
 target="_blank">
 💬
 </a>
+
+<script>
+
+const observer = new IntersectionObserver(entries => {
+
+entries.forEach(entry => {
+
+if(entry.isIntersecting){
+
+entry.target.style.opacity = "1";
+entry.target.style.transform = "translateY(0px)";
+
+}
+
+});
+
+});
+
+document.querySelectorAll('.card,.contact-box').forEach(el=>{
+
+el.style.opacity="0";
+el.style.transform="translateY(50px)";
+el.style.transition="all .8s ease";
+
+observer.observe(el);
+
+});
+
+</script>
 
 </body>
 </html>
