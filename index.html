@@ -910,6 +910,151 @@ width:100%;
 padding:13px;
 }
 
+.view-product{
+    display:block;
+    width:100%;
+    margin-bottom:12px;
+    padding:13px;
+    background:#fff;
+    border:1px solid #d4af37;
+    border-radius:28px;
+    color:#a47a16;
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:.5px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.view-product:hover{
+    background:#faf6e8;
+    transform:translateY(-2px);
+}
+
+/* =========================
+   FICHA DEL PRODUCTO
+========================= */
+
+.product-detail{
+    position:fixed;
+    inset:0;
+    z-index:100;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:25px;
+    background:rgba(17,17,17,.55);
+    backdrop-filter:blur(12px);
+}
+
+.product-detail.active{
+    display:flex;
+}
+
+.product-detail-inner{
+    width:min(1050px,95vw);
+    max-height:90vh;
+    overflow:auto;
+    background:#fff;
+    border-radius:26px;
+    box-shadow:0 30px 90px rgba(0,0,0,.25);
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    overflow:hidden;
+    position:relative;
+}
+
+.product-detail-image{
+    min-height:520px;
+    background:
+    linear-gradient(
+        145deg,
+        #fafafa,
+        #eeeeec
+    );
+    display:grid;
+    place-items:center;
+    overflow:hidden;
+}
+
+.product-detail-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+.product-detail-info{
+    padding:55px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.detail-kicker{
+    font-size:10px;
+    color:#b1841e;
+    letter-spacing:3px;
+    font-weight:800;
+    margin-bottom:14px;
+}
+
+.product-detail-info h2{
+    font-size:clamp(30px,4vw,48px);
+    line-height:1;
+    letter-spacing:-2px;
+    margin-bottom:22px;
+}
+
+.detail-description{
+    color:#707070;
+    font-size:14px;
+    line-height:1.8;
+    margin-bottom:28px;
+}
+
+.detail-features{
+    display:grid;
+    gap:13px;
+    margin-bottom:32px;
+}
+
+.detail-features div{
+    font-size:12px;
+    font-weight:700;
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.detail-features span{
+    width:25px;
+    height:25px;
+    border-radius:50%;
+    border:1px solid #d4af37;
+    color:#b1841e;
+    display:grid;
+    place-items:center;
+}
+
+.detail-buttons{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.back-products{
+    text-align:center;
+    padding:12px;
+    font-size:11px;
+    font-weight:800;
+    color:#777;
+    transition:.3s;
+}
+
+.back-products:hover{
+    color:#b1841e;
+}
 
 /* =========================
    SOBRE NOSOTROS
@@ -1109,17 +1254,11 @@ Productos originales
 
 <a class="brand" href="#inicio">
 
-<div class="brand-mark">
-
-FER<span>⚡</span>ELECTRO
-
-</div>
-
-<div class="brand-sub">
-
-ITAEMBÉ GUAZÚ
-
-</div>
+    <img
+        src="logo.jpg"
+        alt="FER⚡ELECTRO"
+        class="nav-logo"
+    >
 
 </a>
 
