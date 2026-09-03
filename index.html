@@ -1079,11 +1079,15 @@ padding:13px;
 }
 
 .back-products{
+    width:100%;
     text-align:center;
     padding:12px;
     font-size:11px;
     font-weight:800;
     color:#777;
+    background:none;
+    border:0;
+    cursor:pointer;
     transition:.3s;
 }
 
@@ -1557,7 +1561,7 @@ class="product-real-image"
 
 <h3>
 Auriculares Bluetooth
-</h
+</h3>
   <p>
 Audio inalámbrico con diseño moderno
 y cómodo para todos los días.
@@ -1997,14 +2001,15 @@ CONSULTAR POR WHATSAPP ◔
 </a>
 
 
-<a
-href="#productos"
+<button
+type="button"
 class="back-products"
+onclick="closeProduct()"
 >
 
 ← VOLVER A PRODUCTOS
 
-</a>
+</button>
 
 </div>
 
@@ -2329,8 +2334,16 @@ font-size:9px;
 }
 
 .product-detail-image{
-    min-height:300px;
-    height:300px;
+    min-height:250px;
+    height:auto;
+}
+
+.product-detail-image img{
+    width:100%;
+    height:auto;
+    max-height:320px;
+    object-fit:contain;
+    padding:10px;
 }
 
 .product-detail-info{
